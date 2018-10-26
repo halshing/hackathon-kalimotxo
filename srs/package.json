@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "xelatex document.tex && npm run clean",
-    "clean": "rm -rf *.acn *.alg *.glg *.glo *.gls *.glsdefs *.ist *.xdy *.acr *.bbl *.blg *.aux *.dvi *.log *.lot *.idx *.toc *.lof *.brf *.out"
+    "clean": "rm -rf *.fls *.fdb_latexmk *.acn *.alg *.glg *.glo *.gls *.glsdefs *.ist *.xdy *.acr *.bbl *.blg *.aux *.dvi *.log *.lot *.idx *.toc *.lof *.brf *.out"
   },
   "author": "Bogdan Lupu",
   "license": "UNLICENSE"

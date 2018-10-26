@@ -198,42 +198,71 @@ transfer rates, and synchronization mechanisms.$>$
 
 
 \chapter{System Features}
-$<$This template illustrates organizing the functional requirements for the
-product by system features, the major services provided by the product. You may
-prefer to organize this section by use case, mode of operation, user class,
-object class, functional hierarchy, or combinations of these, whatever makes the
-most logical sense for your product.$>$
+The system must provide,at a minimum, the following functions
+in accordance with the other requirements described within
+this SRS document.
+% $<$This template illustrates organizing the functional requirements for the
+% product by system features, the major services provided by the product. You may
+% prefer to organize this section by use case, mode of operation, user class,
+% object class, functional hierarchy, or combinations of these, whatever makes the
+% most logical sense for your product.$>$
 
-\section{System Feature 1}
-$<$Don’t really say “System Feature 1.” State the feature name in just a few
-words.$>$
+\section{Register System}
+The system should have a register system for the user.
 
-\subsection{Description and Priority}
-$<$Provide a short description of the feature and indicate whether it is of
-High, Medium, or Low priority. You could also include specific priority
-component ratings, such as benefit, penalty, cost, and risk (each rated on a
-relative scale from a low of 1 to a high of 9).$>$
+% \subsection{Description and Priority}
+% $<$Provide a short description of the feature and indicate whether it is of
+% High, Medium, or Low priority. You could also include specific priority
+% component ratings, such as benefit, penalty, cost, and risk (each rated on a
+% relative scale from a low of 1 to a high of 9).$>$
 
 \subsection{Stimulus/Response Sequences}
-$<$List the sequences of user actions and system responses that stimulate the
-behavior defined for this feature. These will correspond to the dialog elements
-associated with use cases.$>$
+% $<$List the sequences of user actions and system responses that stimulate the
+% behavior defined for this feature. These will correspond to the dialog elements
+% associated with use cases.$>$
 
 \subsection{Functional Requirements}
-$<$Itemize the detailed functional requirements associated with this feature.
-These are the software capabilities that must be present in order for the user
-to carry out the services provided by the feature, or to execute the use case.
-Include how the product should respond to anticipated error conditions or
-invalid inputs. Requirements should be concise, complete, unambiguous,
-verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary
-information is not yet available.$>$
+% $<$Itemize the detailed functional requirements associated with this feature.
+% These are the software capabilities that must be present in order for the user
+% to carry out the services provided by the feature, or to execute the use case.
+% Include how the product should respond to anticipated error conditions or
+% invalid inputs. Requirements should be concise, complete, unambiguous,
+% verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary
+% information is not yet available.$>$
 
-$<$Each requirement should be uniquely identified with a sequence number or a
-meaningful tag of some kind.$>$
+% $<$Each requirement should be uniquely identified with a sequence number or a
+% meaningful tag of some kind.$>$
+\begin{enumerate}
+    \item REQ-1:
+    \item REQ-2:
+\end{enumerate}
 
-REQ-1:	REQ-2:
+\section{Authorization and Authentication System}
+The system should have a login system for the user and based on
+their roles they will access different views in the app.
 
-\section{System Feature 2 (and so on)}
+\section{QR Code Generator}
+As a bartender after you are registered in the app you will receive a unique qrcode.
+The bartender can print the qrcode or present from the phone the qrcode to the customer.
+
+\section{QR Code Scanner}
+As a user i need to be able to scan the qrcode provided by the bartender.
+
+\section{User Profile}
+As a user, i need a profile view where I'm able to change my profile picture add a description.
+
+\section{Bartender reviews view}
+As a bartender i need a view of all my reviews received form customers.
+
+\section{Customer rating}
+As a user after I scanned the qr code from the bartender:
+\begin{itemize}
+    \item I need a view with the bartender profile and rating.
+    \item I need the capability to add a comment and rating for a bartender
+\end{itemize}
+
+\section{Hall of Fame}
+As a non login in user i have access to the bartenders Hall of Fame.
 
 
 \chapter{Other Nonfunctional Requirements}
