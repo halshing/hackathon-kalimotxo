@@ -1,1 +1,1 @@
-# kalimatxo - bartender rating app.
+# kalimotxo - bartender rating app.
