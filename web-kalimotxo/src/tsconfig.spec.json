@@ -1,12 +1,22 @@
 {
-  "extends": "../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
     "outDir": "../out-tsc/spec",
+    "paths": {
+      "@app/*": [
+        "app/*"
+      ],
+      "@projects/*": [
+        "../projects/*"
+      ]
+    },
     "types": [
       "jasmine",
       "node"
     ]
   },
+  "extends": "../tsconfig.json",
   "files": [
     "test.ts",
     "polyfills.ts"

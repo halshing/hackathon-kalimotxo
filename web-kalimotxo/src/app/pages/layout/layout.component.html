@@ -1,0 +1,21 @@
+<clr-main-container>
+  <clr-header class="header-1">
+    <div class="branding">
+      <clr-icon class="nav-link" shape="cpu"></clr-icon>
+      <span class="title">Kalimotxo</span>
+    </div>
+
+  </clr-header>
+  <div class="content-container">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+    <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom" [clr-nav-level]="1">
+      <a clrVerticalNavLink routerLink="/">
+        <clr-icon clrVerticalNavIcon shape="grid-chart"></clr-icon>
+        Test
+      </a>
+
+    </clr-vertical-nav>
+  </div>
+</clr-main-container>

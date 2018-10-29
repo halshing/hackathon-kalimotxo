@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './pages/layout/layout.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/kalimotxo/home', pathMatch: 'full' },
+  { path: 'kalimotxo/home', component: LayoutComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
