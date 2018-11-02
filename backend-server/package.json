@@ -12,6 +12,11 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "firebase": "^5.5.7",
+    "firebase-admin": "^6.1.0",
     "morgan": "^1.9.1"
+  },
+  "engines": {
+    "node": "^8.0"
   }
 }
