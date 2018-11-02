@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  api_url: '',
+  api_url: 'https://kalimotxoapp.azurewebsites.net/api/',
   production: false,
 };
 
