@@ -1,10 +1,13 @@
 {
   "name": "kalimotxo",
   "short_name": "kalimotxo",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
-  "display": "browser",
+  "lang": "en",
+  "theme_color": "transparent",
+  "background_color": "transparent",
+  "display": "fullscreen",
   "orientation": "portrait",
+  "related_applications": [],
+  "prefer_related_applications": false,
   "Scope": "/",
   "start_url": "/",
   "icons": [{
