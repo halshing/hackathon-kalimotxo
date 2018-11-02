@@ -14,8 +14,6 @@ import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 import { AlertComponent } from './alert/alert.component';
 
-
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
