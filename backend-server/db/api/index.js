@@ -4,15 +4,15 @@ const db = require("../../db").firestore();
 
 // Database endpoints
 const createUser = require("./createUser");
-// const signInUser = require("./signInUser");
-// const signOutUser = require("./signOutUser");
-// const getCurrentUser = require("./getCurrentUser");
-// const updateUserProfile = require("./updateUserProfile");
+const signIn = require("./signIn");
+const signOut = require("./signOut");
+const getCurrentUser = require("./getCurrentUser");
+const updateUserProfile = require("./updateUserProfile");
 
 module.exports = {
     createUser: data => createUser(auth, db, data),
-    // signInUser: data => signInUser(auth, data),
-    // signOutUser: () => signOutUser(auth),
-    // getCurrentUser: () => getCurrentUser(auth),
-    // updateUserProfile: data => updateUserProfile(db, data)
+    signIn: data => signIn(auth, data),
+    signOut: () => signOut(auth),
+    getCurrentUser: () => getCurrentUser(auth),
+    updateUserProfile: data => updateUserProfile(db, data)
 };
