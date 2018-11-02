@@ -13,9 +13,10 @@
   },
   "scripts": {
     "ng": "./node_modules/.bin/ng",
-    "start": "./node_modules/.bin/ng serve",
-    "start:prod": "node ./server.js",
-    "build": "./node_modules/.bin/ng build --prod",
+    "start:dev": "./node_modules/.bin/ng serve",
+    "start": "node ./server.js",
+    "build": "./node_modules/.bin/ng build --aot --prod",
+    "postinstall": "npm run build",
     "test": "./node_modules/.bin/ng test web-kalimotxo",
     "coverage": "npx http-server -c-1 -o -p 9875 ./coverage",
     "lint": "./node_modules/.bin/ng lint web-kalimotxo",
