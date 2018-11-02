@@ -8,11 +8,13 @@ const signIn = require("./signIn");
 const signOut = require("./signOut");
 const getCurrentUser = require("./getCurrentUser");
 const updateUserProfile = require("./updateUserProfile");
+const getUserById = require("./getUserById");
 
 module.exports = {
-    createUser: data => createUser(auth, db, data),
-    signIn: data => signIn(auth, data),
-    signOut: () => signOut(auth),
-    getCurrentUser: () => getCurrentUser(auth),
-    updateUserProfile: data => updateUserProfile(db, data)
+  createUser: data => createUser(auth, db, data),
+  signIn: data => signIn(auth, data),
+  signOut: () => signOut(auth),
+  getCurrentUser: () => getCurrentUser(auth),
+  updateUserProfile: data => updateUserProfile(db, data),
+  getUserById: data => getUserById(db, data)
 };
