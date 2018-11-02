@@ -6,7 +6,13 @@ import { RatingViewComponent } from './rating-view/rating-view.component';
 const routes: Routes = [
   {
     path: '',
-    component: RatingViewComponent,
+    canActivate: [CustomerGuard],
+    children: [
+      {
+        path: 'rating-view',
+        component: RatingViewComponent,
+      },
+    ],
   },
 ];
 
