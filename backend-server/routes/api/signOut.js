@@ -3,7 +3,7 @@ const api = require("../../db/api");
 // POST request
 const signOut = async (req, res) => {
   try {
-    await api.signOutUser();
+    await api.signOut();
     res.json({ success: true });
   } catch (error) {
     res.json({ error });
