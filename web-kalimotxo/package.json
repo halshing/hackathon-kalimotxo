@@ -3,6 +3,14 @@
   "version": "0.0.0",
   "author": "team7",
   "license": "UNLICENSE",
+  "engines": {
+    "node": "8.11.x",
+    "npm": "5.6.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/halshing/hackathon-kalimotxo"
+  },
   "scripts": {
     "ng": "./node_modules/.bin/ng",
     "start": "./node_modules/.bin/ng serve",
