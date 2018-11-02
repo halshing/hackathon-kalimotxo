@@ -7,7 +7,10 @@ const routes: Routes = [
   {
     path: 'kalimotxo',
     component: LayoutComponent,
-    children: [{ path: 'hall-of-fame', component: HallOfFameComponent }],
+    children: [
+      { path: 'hall-of-fame', component: HallOfFameComponent },
+      { path: 'customer', loadChildren: './customer/customer.module.ts#CustomerModule' },
+    ],
   },
 ];
 
