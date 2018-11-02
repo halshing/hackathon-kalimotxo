@@ -5,7 +5,7 @@ import { LayoutComponent } from './layout/layout.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'kalimotxo',
     component: LayoutComponent,
     children: [{ path: 'hall-of-fame', component: HallOfFameComponent }],
   },
