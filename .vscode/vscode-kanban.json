@@ -1,8 +1,6 @@
 {
   "done": [],
-  "in-progress": [],
-  "testing": [],
-  "todo": [
+  "in-progress": [
     {
       "creation_time": "2018-11-02T19:43:11.189Z",
       "id": "5",
@@ -15,6 +13,15 @@
       "references": [],
       "title": "Authentication System Backend"
     },
+    {
+      "creation_time": "2018-11-02T19:41:58.760Z",
+      "id": "1",
+      "references": [],
+      "title": "Register System Frontend"
+    }
+  ],
+  "testing": [],
+  "todo": [
     {
       "creation_time": "2018-11-02T19:42:23.579Z",
       "id": "3",
@@ -32,12 +39,6 @@
       "id": "6",
       "references": [],
       "title": "QR Code Module"
-    },
-    {
-      "creation_time": "2018-11-02T19:41:58.760Z",
-      "id": "1",
-      "references": [],
-      "title": "Register System Frontend"
     }
   ]
 }
