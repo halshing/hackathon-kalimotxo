@@ -8,13 +8,11 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { ClarityModule } from '@clr/angular';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { GrowlModule } from 'primeng/growl';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
-import { AlertComponent } from './alert/alert.component';
-
-
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +31,7 @@ import { AlertComponent } from './alert/alert.component';
 
     AppRoutingModule,
     ClarityModule,
+    GrowlModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
     // app
