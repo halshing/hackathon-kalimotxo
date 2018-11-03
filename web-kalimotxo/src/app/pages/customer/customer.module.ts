@@ -8,9 +8,10 @@ import { CustomerRoutingModule } from './customer-routing.module';
 import { HeatMapComponent } from './heat-map/heat-map.component';
 import { QrcodeScannerComponent } from './qrcode-scanner/qrcode-scanner.component';
 import { RatingViewComponent } from './rating-view/rating-view.component';
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 
 @NgModule({
   imports: [CommonModule, CustomerRoutingModule, ZXingScannerModule, WidgetsModule, ServicesModule, GMapModule],
-  declarations: [QrcodeScannerComponent, RatingViewComponent, HeatMapComponent],
+  declarations: [QrcodeScannerComponent, RatingViewComponent, HeatMapComponent, CustomerProfileComponent],
 })
 export class CustomerModule {}

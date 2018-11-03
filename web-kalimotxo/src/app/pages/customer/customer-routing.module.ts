@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CustomerProfileComponent } from './customer-profile/customer-profile.component';
 import { CustomerGuard } from './customer.guard';
 import { HeatMapComponent } from './heat-map/heat-map.component';
 import { QrcodeScannerComponent } from './qrcode-scanner/qrcode-scanner.component';
@@ -13,6 +14,10 @@ const routes: Routes = [
       {
         path: 'rating-view/:bartenderId',
         component: RatingViewComponent,
+      },
+      {
+        path: 'customer-profile/:customerId',
+        component: CustomerProfileComponent,
       },
       {
         path: 'qr-scanner',

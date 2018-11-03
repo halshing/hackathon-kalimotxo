@@ -13,7 +13,7 @@
           <clr-icon shape="caret down"></clr-icon>
         </button>
         <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-          <a routerLink="/kalimotxo/bartender/bartender-profile/8Hj9j8ciR6ao0kg9Qy5RMSYtN4x2" clrDropdownItem>Profile</a>
+          <a (click)="goToProfile()" clrDropdownItem>Profile</a>
           <a clrDropdownItem (click)="logout()">Log out</a>
         </clr-dropdown-menu>
       </clr-dropdown>
@@ -24,11 +24,11 @@
       <router-outlet></router-outlet>
     </div>
     <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom" [clr-nav-level]="1">
-      <a clrVerticalNavLink routerLink="/kalimotxo/customer/qr-scanner">
+      <a *ngIf="currentUser.userType=== 'Customer'" clrVerticalNavLink routerLink="/kalimotxo/customer/qr-scanner">
         <clr-icon clrVerticalNavIcon shape="qr-code"></clr-icon>
         Scan QrCode
       </a>
-      <a clrVerticalNavLink routerLink="/kalimotxo/customer/heat-map">
+      <a *ngIf="currentUser.userType=== 'Customer'" clrVerticalNavLink routerLink="/kalimotxo/customer/heat-map">
         <clr-icon clrVerticalNavIcon shape="map"></clr-icon>
         Heat Map
       </a>
