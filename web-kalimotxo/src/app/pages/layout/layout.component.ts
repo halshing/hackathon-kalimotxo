@@ -22,13 +22,13 @@ export class LayoutComponent implements OnInit {
 
   goToProfile() {
     switch (this.currentUser.userType) {
-      case 'Customer':
+      case 'customer':
         this.router.navigate(['/kalimotxo/customer/customer-profile/', this.currentUser.userId]);
         break;
-      case 'Bartender':
+      case 'bartender':
         this.router.navigate(['/kalimotxo/bartender/bartender-profile/', this.currentUser.userId]);
         break;
-      case 'Business':
+      case 'business':
         this.router.navigate(['/kalimotxo/bartender/bartender-profile/', this.currentUser.userId]);
         break;
       default:
