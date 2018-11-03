@@ -13,10 +13,9 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
-import { HeatMapComponent } from './customer/heat-map/heat-map.component';
 
 @NgModule({
-  declarations: [AppComponent, HeatMapComponent],
+  declarations: [AppComponent],
   imports: [
     // CORE
     BrowserModule,
