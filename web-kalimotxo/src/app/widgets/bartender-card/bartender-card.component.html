@@ -5,18 +5,19 @@
   <div class="card-block">
     <h3 class="card-title">{{bartender.name}}</h3>
     <div style="padding-left: 20%;">
-      <app-rating [rating]='bartender.rating' (ratingClick)='ratingComponentClick($event)'></app-rating>
-      <div class="comment-form">
-        <form clrForm>
-          <clr-input-container>
-            <label>Comment</label>
-            <input clrInput placeholder="Fill me in, scotty!" name="comment" [(ngModel)]="comment" />
-          </clr-input-container>
-        </form>
-        <button type="button" class="btn btn-icon btn-primary btn-block">
-          <clr-icon shape="plus"></clr-icon> Save Rating
-        </button>
-      </div>
+      <app-rating [rating]='bartender.rating' [readonly]="readonly" (ratingClick)='ratingComponentClick($event)'></app-rating>
+    </div>
+
+    <div *ngIf="!readonly" class="comment-form">
+      <form clrForm>
+        <clr-input-container>
+          <label>Comment</label>
+          <input clrInput placeholder="Fill me in, scotty!" name="comment" [(ngModel)]="comment" />
+        </clr-input-container>
+      </form>
+      <button type="button" class="btn btn-icon btn-primary btn-block" (click)="saveRating()">
+        <clr-icon shape="plus"></clr-icon> Save Rating
+      </button>
     </div>
   </div>
 </div>

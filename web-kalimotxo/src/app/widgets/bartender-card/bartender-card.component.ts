@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-bartender-card',
@@ -7,13 +7,29 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class BartenderCardComponent implements OnInit {
   @Input()
+  readonly: boolean;
+
+  @Input()
   bartender: any;
+
+  @Output()
+  bartenderRating: EventEmitter<any> = new EventEmitter<any>();
+
   comment: string;
+  rating: number;
 
   constructor() {}
 
   ngOnInit() {}
+
   ratingComponentClick(clickObj: any): void {
-    console.log(clickObj);
+    this.rating = clickObj.rating;
+  }
+
+  saveRating() {
+    this.bartenderRating.emit({
+      comment: this.comment,
+      rating: this.rating,
+    });
   }
 }

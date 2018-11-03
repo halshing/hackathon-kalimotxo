@@ -15,4 +15,6 @@ export class BartenderService {
   getBartenders() {
     return this.http.get(`${this.API_URL}getAllBartenders`);
   }
+
+  constructor() { }
 }

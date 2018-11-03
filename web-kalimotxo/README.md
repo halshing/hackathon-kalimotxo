@@ -25,3 +25,27 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Release workflow
+
+- Make changes
+- Commit those changes
+- Run the npm version [patch|minor|major] command
+- Push
+
+## ExtraLibs
+
+- [clarity](https://vmware.github.io/clarity/)
+- [angularx-qrcode](https://github.com/Cordobo/angularx-qrcode)
+- [ngx-scanner](https://github.com/zxing-js/ngx-scanner)
+- [ngx-pipes](https://github.com/danrevah/ngx-pipes)
+- [ng-validators](https://github.com/gangachris/ng-validators)
+- [lodash](https://lodash.com/)
+- [compodoc](https://github.com/compodoc/compodoc)
+- [faker](https://github.com/marak/Faker.js/)
+
+### Doc
+
+[conventional-changelog-cli](https://www.npmjs.com/package/conventional-changelog-cli)
+[commitlint](https://github.com/marionebl/commitlint)
+[config-angular](https://github.com/marionebl/commitlint/tree/master/@commitlint/config-angular)
