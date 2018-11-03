@@ -8,6 +8,7 @@ const createUser = async (auth, db, data) => {
 
     // we don't want to store passwords - this is handled by Firebase
     delete data.password;
+    data.userType = data.userType.toLowerCase();
 
     // add additional properties to our data object
     data = {
