@@ -1,5 +1,16 @@
 {
-  "done": [],
+  "done": [
+    {
+      "creation_time": "2018-11-02T19:43:26.283Z",
+      "description": {
+        "content": "web qr code scanner\n",
+        "mime": "text/markdown"
+      },
+      "id": "6",
+      "references": [],
+      "title": "QR Code Scanner"
+    }
+  ],
   "in-progress": [
     {
       "creation_time": "2018-11-02T19:43:11.189Z",
@@ -14,6 +25,16 @@
       "title": "Authentication System Backend"
     },
     {
+      "creation_time": "2018-11-02T19:42:23.579Z",
+      "details": {
+        "content": "\nAs a user after I scanned the qr code from the bartender:\n• I need a view with the bartender profile and rating.\n• I need the capability to add a comment and rating for a bartender\n",
+        "mime": "text/markdown"
+      },
+      "id": "3",
+      "references": [],
+      "title": "Customer Rating"
+    },
+    {
       "creation_time": "2018-11-02T19:41:58.760Z",
       "id": "1",
       "references": [],
@@ -23,22 +44,58 @@
   "testing": [],
   "todo": [
     {
-      "creation_time": "2018-11-02T19:42:23.579Z",
-      "id": "3",
+      "category": "frontend",
+      "creation_time": "2018-11-03T10:10:13.983Z",
+      "id": "10",
       "references": [],
-      "title": "Customer Rating"
+      "title": "Business unit Unit Premium dashboard"
     },
     {
       "creation_time": "2018-11-02T19:42:35.422Z",
+      "description": {
+        "content": "As a non login in user i have access to the bartenders Hall of Fame.",
+        "mime": "text/markdown"
+      },
       "id": "4",
       "references": [],
       "title": "Hall Of Fame"
     },
     {
-      "creation_time": "2018-11-02T19:43:26.283Z",
-      "id": "6",
+      "category": "frontend",
+      "creation_time": "2018-11-03T10:09:48.657Z",
+      "description": {
+        "content": "As a login in customer i have access to a heat map where i can see the most crowded near me.",
+        "mime": "text/markdown"
+      },
+      "id": "9",
       "references": [],
-      "title": "QR Code Module"
+      "title": "Heat Map"
+    },
+    {
+      "category": "frontend",
+      "creation_time": "2018-11-03T10:08:55.829Z",
+      "description": {
+        "content": "generate qrcode based on the bartender id",
+        "mime": "text/markdown"
+      },
+      "id": "8",
+      "references": [],
+      "title": "QR Code Generator"
+    },
+    {
+      "category": "frontend",
+      "creation_time": "2018-11-03T10:07:37.017Z",
+      "description": {
+        "content": "adaptive user profile based on the role",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "* As a user, i need a profile view where I’m able to change my profile picture add a description.\n* As a bartender i need a view of all my reviews received form customers.\n* As a business unit i need a profile view where I‘m able to change my addresses\n",
+        "mime": "text/markdown"
+      },
+      "id": "7",
+      "references": [],
+      "title": "User Profile"
     }
   ]
 }
