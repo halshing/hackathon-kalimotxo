@@ -1,3 +1,19 @@
-<p>
-  ratings-list works!
-</p>
+<div class="card">
+  <div class="card-header">
+    Latest Ratings
+  </div>
+  <div class="card-block">
+    <div class="card-text">
+      <ol *ngIf="bartender_ratings_list === null" class="activity-feed">
+        <li class="feed-item"><span class="noflash-text">No Ratings available</span></li>
+      </ol>
+      <ol *ngIf="bartender_ratings_list" class="activity-feed">
+        <li *ngFor="let rating of bartender_ratings_list" class="feed-item">
+          <clr-icon *ngFor="let item of createRange(rating.rating)" size="16" class="is-warning" [ngClass]="{'is-solid': item}"
+            shape="star"></clr-icon>
+          <div class="text">{{rating.comment}}</div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>

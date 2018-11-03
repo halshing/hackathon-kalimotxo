@@ -1,7 +1,11 @@
-<div class="container">
+<span *ngIf="loading" style="margin: 40% 0px 0px 40%" class="spinner">
+  Loading...
+</span>
+
+<div *ngIf="!loading" class="container">
   <div class="row">
     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
-      <app-bartender-card [bartender]=bartender (bartenderRating)="submitBartenderRating($event)"></app-bartender-card>
+      <app-bartender-card [bartender]=bartender [submitted]=submitted (bartenderRating)="submitBartenderRating($event)"></app-bartender-card>
     </div>
     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
       <app-ratings-list [bartender_ratings_list]=bartender_ratings_list></app-ratings-list>

@@ -1,9 +1,16 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RestBartenderService {
-
-  constructor() { }
+  constructor(private http: HttpClient) {}
+  getBartenderById(bartenderId) {
+    return this.http.get(`getBartenderById/${bartenderId}`);
+  }
+  saveRating(rating) {
+    return this.http.post('saveRating', rating);
+  }
+  getHallofFame() {
+    return this.http.get('getTopBartenders');
+  }
 }

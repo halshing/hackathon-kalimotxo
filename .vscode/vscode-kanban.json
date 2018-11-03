@@ -1,6 +1,19 @@
 {
   "done": [
     {
+      "assignedTo": {
+        "name": "Hasan"
+      },
+      "creation_time": "2018-11-02T19:42:10.954Z",
+      "details": {
+        "content": "Created authentication endpoints",
+        "mime": "text/markdown"
+      },
+      "id": "2",
+      "references": [],
+      "title": "Authentication System Backend"
+    },
+    {
       "creation_time": "2018-11-02T19:43:26.283Z",
       "description": {
         "content": "web qr code scanner\n",
@@ -9,21 +22,15 @@
       "id": "6",
       "references": [],
       "title": "QR Code Scanner"
-    }
-  ],
-  "in-progress": [
+    },
     {
       "creation_time": "2018-11-02T19:43:11.189Z",
       "id": "5",
       "references": [],
       "title": "Authentication Module FrontEnd"
-    },
-    {
-      "creation_time": "2018-11-02T19:42:10.954Z",
-      "id": "2",
-      "references": [],
-      "title": "Authentication System Backend"
-    },
+    }
+  ],
+  "in-progress": [
     {
       "creation_time": "2018-11-02T19:42:23.579Z",
       "details": {

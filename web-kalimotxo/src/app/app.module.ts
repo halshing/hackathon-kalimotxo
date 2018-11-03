@@ -8,6 +8,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { ClarityModule } from '@clr/angular';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
+import { MessageService } from 'primeng/components/common/messageservice';
 import { GrowlModule } from 'primeng/growl';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -37,7 +38,7 @@ import { PagesModule } from './pages/pages.module';
     // app
     PagesModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {

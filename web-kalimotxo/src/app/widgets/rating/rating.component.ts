@@ -16,7 +16,11 @@ export class RatingComponent implements OnInit {
   ratingClick: EventEmitter<any> = new EventEmitter<any>();
 
   inputName: string;
-  ngOnInit() {}
+
+  ngOnInit() {
+    this.rating = Math.trunc(this.rating);
+  }
+
   onClick(rating: number): void {
     if (!this.readonly) {
       this.rating = rating;
