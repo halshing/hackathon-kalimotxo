@@ -4,6 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   <ngx-loading-bar [includeSpinner]="false"></ngx-loading-bar>
+  <p-growl [(value)]="messages"></p-growl>
   <router-outlet></router-outlet>`,
 })
-export class AppComponent {}
+export class AppComponent {
+  messages: any;
+}

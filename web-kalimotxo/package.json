@@ -46,6 +46,7 @@
     "@ngx-loading-bar/http-client": "^2.2.0",
     "@ngx-loading-bar/router": "^2.2.0",
     "@webcomponents/custom-elements": "^1.0.0",
+    "@zxing/ngx-scanner": "^1.3.0",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
     "hammerjs": "^2.0.8",
