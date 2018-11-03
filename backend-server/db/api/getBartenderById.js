@@ -13,7 +13,7 @@ const getBartenderById = async (db, id) => {
       .where(UserType, "==", "bartender")
       .limit(1)
       .get();
-    if (query.empty) return { message: "No Bartender was found!" };
+    if (query.empty) return { message: "No bartender was found!" };
     // TO DO: also query the associated ratings for the bartender. When the response is sent, a
     // list of ratings for that bartender should also be included
     return { user: query.docs[0].data() };
