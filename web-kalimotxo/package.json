@@ -15,7 +15,7 @@
     "ng": "./node_modules/.bin/ng",
     "start:dev": "./node_modules/.bin/ng serve",
     "start": "node ./server.js",
-    "build": "./node_modules/.bin/ng build --aot --prod",
+    "build": "./node_modules/.bin/ng build",
     "heroku-postbuild": "npm run build && npm run documentation",
     "test": "./node_modules/.bin/ng test web-kalimotxo",
     "coverage": "npx http-server -c-1 -o -p 9875 ./coverage",
