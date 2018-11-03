@@ -8,10 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BartenderCardComponent implements OnInit {
   @Input()
   bartender: any;
+  comment: string;
 
   constructor() {}
 
-  ngOnInit() {
-    console.log(this.bartender);
+  ngOnInit() {}
+  ratingComponentClick(clickObj: any): void {
+    console.log(clickObj);
   }
 }

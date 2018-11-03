@@ -12,21 +12,15 @@ export class RatingComponent implements OnInit {
   @Input()
   readonly: boolean;
 
-  @Input()
-  itemId: number;
-
   @Output()
   ratingClick: EventEmitter<any> = new EventEmitter<any>();
 
   inputName: string;
-  ngOnInit() {
-    this.inputName = this.itemId + '_rating';
-  }
+  ngOnInit() {}
   onClick(rating: number): void {
     if (!this.readonly) {
       this.rating = rating;
       this.ratingClick.emit({
-        itemId: this.itemId,
         rating,
       });
     }

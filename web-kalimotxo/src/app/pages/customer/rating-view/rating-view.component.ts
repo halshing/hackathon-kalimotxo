@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RatingViewComponent implements OnInit {
   bartender = {
+    id: 123,
     name: 'Jon',
     profilePicture: 'https://randomuser.me/api/portraits/men/61.jpg',
     rating: 3,
