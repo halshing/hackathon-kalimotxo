@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '../../services/authentication.service';
-import { UserService } from '../../services/user.service';
+import { AuthenticationService } from '@app/api/authentication.service';
+import { UserService } from '@app/api/user.service';
 import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.less']
+  styleUrls: ['./register.component.less'],
 })
 export class RegisterComponent implements OnInit {
   user: any = {};
@@ -20,41 +20,42 @@ export class RegisterComponent implements OnInit {
     password: new FormControl('', Validators.required),
     phoneNumber: new FormControl('', Validators.required),
     userType: new FormControl('', Validators.required),
-
   });
   userTypes: string[] = ['Customer', 'Bartender', 'Business'];
   defaultUserType = 'Customer';
   loading = false;
   submitted = false;
-  constructor(private formBuilder: FormBuilder,
+  constructor(
+    private formBuilder: FormBuilder,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private userService: UserService
-    ) {
-
+    private userService: UserService,
+  ) {}
+  get f() {
+    return this.registerForm.controls;
   }
-  get f() { return this.registerForm.controls; }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
   onSubmit() {
     this.submitted = true;
 
-        // stop here if form is invalid
-        if (this.registerForm.invalid) {
-            return;
-        }
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+      return;
+    }
 
-        this.loading = true;
-        this.userService.register(this.registerForm.value)
-            .pipe(first())
-            .subscribe(
-                data => {
-                    this.router.navigate(['/kalimotxo/hall-of-fame']);
-                },
-                error => {
-                    // this.alertService.error(error);
-                    this.loading = false;
-                });
+    this.loading = true;
+    this.userService
+      .register(this.registerForm.value)
+      .pipe(first())
+      .subscribe(
+        (data) => {
+          this.router.navigate(['/kalimotxo/hall-of-fame']);
+        },
+        (error) => {
+          // this.alertService.error(error);
+          this.loading = false;
+        },
+      );
   }
 }
