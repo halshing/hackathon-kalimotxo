@@ -1,21 +1,22 @@
 <div class="login-wrapper">
-  <form class="login" [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
-      <label class="title">
-          <h3 class="welcome">Register</h3>
-          Kalimotxo
-          <h5 class="hint">Insert your data to Register</h5>
-      </label>
-      <div class="login-group">
-          <input class="username" formControlName="firstName" clrInput type="text"  placeholder="FirstName">
-          <input class="username" formControlName="lastName" clrInput type="text"  placeholder="LastName">
-          <input class="username" formControlName="userName" clrInput type="text"  placeholder="UserName">
-          <input class="username" formControlName="email" clrInput type="email"  placeholder="Email">
-          <input class="username" formControlName="phoneNumber" clrInput type="text"  placeholder="PhoneNumber">
-          <input class="password" formControlName="password" type="password" id="login_password" placeholder="Password">
-          <select clrInput id="state" formControlName="userType">
-            <option *ngFor="let userType of userTypes" [value]="defaultUserType">{{userType}}</option>
-          </select>
-          <button type="submit" type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Register</button>
-      </div>
+  <form class="login" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label class="title">
+      <h3 class="welcome">Register</h3>
+      Kalimotxo
+      <h5 class="hint">Insert your data to Register</h5>
+    </label>
+    <div class="login-group">
+      <input class="username" formControlName="firstName" clrInput type="text" placeholder="FirstName">
+      <input class="username" formControlName="lastName" clrInput type="text" placeholder="LastName">
+      <input class="username" formControlName="userName" clrInput type="text" placeholder="UserName">
+      <input class="username" formControlName="email" clrInput type="email" placeholder="Email">
+      <input class="username" formControlName="phoneNumber" clrInput type="text" placeholder="PhoneNumber">
+      <input class="password" formControlName="password" type="password" id="login_password" placeholder="Password">
+      <select clrInput id="state" formControlName="userType">
+        <option *ngFor="let userType of userTypes" [value]="defaultUserType">{{userType}}</option>
+      </select>
+      <button type="submit" type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Register</button>
+    </div>
+    <a routerLink="/auth/login">Back To Login Page</a>
   </form>
 </div>

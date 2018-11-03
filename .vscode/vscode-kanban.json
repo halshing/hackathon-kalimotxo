@@ -9,15 +9,15 @@
       "id": "6",
       "references": [],
       "title": "QR Code Scanner"
-    }
-  ],
-  "in-progress": [
+    },
     {
       "creation_time": "2018-11-02T19:43:11.189Z",
       "id": "5",
       "references": [],
       "title": "Authentication Module FrontEnd"
-    },
+    }
+  ],
+  "in-progress": [
     {
       "creation_time": "2018-11-02T19:42:10.954Z",
       "id": "2",

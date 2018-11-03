@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
   selector: 'app-layout',
@@ -9,20 +8,20 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrls: ['./layout.component.less'],
 })
 export class LayoutComponent implements OnInit {
-  constructor(private authenticationService: AuthenticationService, private router: Router) {}
+  constructor(private router: Router) {}
 
   ngOnInit() {}
   logout() {
-    this.authenticationService
-      .logout()
-      .pipe(first())
-      .subscribe(
-        (data) => {
-          this.router.navigate(['auth/login']);
-        },
-        (error) => {
-          // this.alertService.error(error);
-        },
-      );
+    // this.authenticationService
+    //   .logout()
+    //   .pipe(first())
+    //   .subscribe(
+    //     (data) => {
+    //       this.router.navigate(['auth/login']);
+    //     },
+    //     (error) => {
+    //       // this.alertService.error(error);
+    //     },
+    //   );
   }
 }

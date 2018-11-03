@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthenticationService } from '@app/api/authentication.service';
+import { RestAuthenticationService } from '@app/api/rest-authentication.service';
+import { LocalStorageService } from '@app/services/localStorage.service';
+import { NotificationService } from '@app/services/notification.service';
 import { first } from 'rxjs/operators';
 
 @Component({
@@ -10,41 +12,45 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./login.component.less'],
 })
 export class LoginComponent implements OnInit {
-  loading = false;
-  submitted = false;
-  loginForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
-  });
+  loginForm: FormGroup;
+
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService,
+    private restAuthenticationService: RestAuthenticationService,
+    private notificationService: NotificationService,
+    private localStorageService: LocalStorageService,
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.loginForm = new FormGroup({
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
+  }
 
   onSubmit() {
-    this.submitted = true;
-
     // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
 
-    this.loading = true;
-    this.authenticationService
+    this.restAuthenticationService
       .login(this.loginForm.value)
       .pipe(first())
       .subscribe(
-        (data) => {
-          this.router.navigate(['/kalimotxo/customer']);
+        (data: any) => {
+          if (data.result.error) {
+            this.notificationService.displayError({
+              name: data.result.error.message,
+              message: data.result.error.code,
+            });
+          } else {
+            this.localStorageService.setJson('user', data.result.user);
+            this.router.navigate(['/']);
+          }
         },
         (error) => {
-          // this.alertService.error(error);
-          this.router.navigate(['/kalimotxo/customer']);
-
-          this.loading = false;
+          this.notificationService.displayError(error);
         },
       );
   }

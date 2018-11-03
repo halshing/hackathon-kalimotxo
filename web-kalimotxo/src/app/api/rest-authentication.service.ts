@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { User } from '@app/models/users';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-@Injectable({ providedIn: 'root' })
-export class AuthenticationService {
+@Injectable()
+export class RestAuthenticationService {
   private currentUserSubject: BehaviorSubject<User>;
   public currentUser: Observable<User>;
 

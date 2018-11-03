@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from '@app/models/users';
 
-@Injectable({ providedIn: 'root' })
-export class UserService {
+@Injectable()
+export class RestUserService {
   constructor(private http: HttpClient) {}
 
   getCurrentUser() {

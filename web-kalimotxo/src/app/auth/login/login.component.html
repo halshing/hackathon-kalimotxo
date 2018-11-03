@@ -1,16 +1,15 @@
 <div class="login-wrapper">
   <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <label class="title">
-          <h3 class="welcome">Welcome to</h3>
-          Kalimotxo
-          <h5 class="hint">Login with your credentials</h5>
-      </label>
-      <div class="login-group">
-
-          <input class="username" formControlName="email" clrInput type="text" id="login_username" placeholder="Username">
-          <input class="password" formControlName="password" clrInput type="password" id="login_password" placeholder="Password">
-          <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
-          <a routerLink="/auth/register" class="signup">Sign up for a Company ID</a>
-      </div>
+    <label class="title">
+      <h3 class="welcome">Welcome to</h3>
+      Kalimotxo
+      <h5 class="hint">Login with your credentials</h5>
+    </label>
+    <div class="login-group">
+      <input class="username" formControlName="email" clrInput type="text" id="login_username" placeholder="Username">
+      <input class="password" formControlName="password" clrInput type="password" id="login_password" placeholder="Password">
+      <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+      <a routerLink="/auth/register" class="signup">Regiser</a>
+    </div>
   </form>
 </div>

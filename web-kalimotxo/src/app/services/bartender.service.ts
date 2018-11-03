@@ -1,20 +1,9 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../../environments/environment.prod';
-import { Bartender } from '../models/bartender';
+import { Observable } from 'rxjs';
 
-import { HttpClient } from '@angular/common/http';
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BartenderService {
-  private API_URL = environment.api_url;
+  constructor() {}
 
-  constructor(private http: HttpClient) { }
-
-  getBartenders() {
-    return this.http.get(`${this.API_URL}getAllBartenders`);
-  }
-
-  constructor() { }
+  // getBartenders(): Observable<any> {}
 }
