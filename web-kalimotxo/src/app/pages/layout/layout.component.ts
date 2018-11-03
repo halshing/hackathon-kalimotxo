@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { first } from 'rxjs/operators';
+import { User } from '@app/models/users';
+import { LocalStorageService } from '@app/services/localStorage.service';
 
 @Component({
   selector: 'app-layout',
@@ -8,20 +9,14 @@ import { first } from 'rxjs/operators';
   styleUrls: ['./layout.component.less'],
 })
 export class LayoutComponent implements OnInit {
-  constructor(private router: Router) {}
+  currentUser: User;
+  constructor(private router: Router, private localStorageService: LocalStorageService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.currentUser = this.localStorageService.getJson('user');
+  }
   logout() {
-    // this.authenticationService
-    //   .logout()
-    //   .pipe(first())
-    //   .subscribe(
-    //     (data) => {
-    //       this.router.navigate(['auth/login']);
-    //     },
-    //     (error) => {
-    //       // this.alertService.error(error);
-    //     },
-    //   );
+    window.localStorage.clear();
+    this.router.navigate(['auth/login']);
   }
 }

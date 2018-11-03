@@ -1,4 +1,5 @@
-export class Bartender {
+export interface Bartender {
+  company: any;
   userType: string;
   lastName: string;
   lastSignInTime: string;
