@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [{ path: '', redirectTo: '/kalimotxo/hall-of-fame', pathMatch: 'full' }];
+const routes: Routes = [
+  { path: '', redirectTo: '/kalimotxo/hall-of-fame', pathMatch: 'full' }
+  , {
+    path: 'auth',
+    loadChildren: './auth/auth.module#AuthModule'
+  }];
 
 @NgModule({
   imports: [
