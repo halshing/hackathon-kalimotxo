@@ -1,47 +1,57 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {  AuthenticationService } from '../../services/authentication.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RestAuthenticationService } from '@app/api/rest-authentication.service';
+import { LocalStorageService } from '@app/services/localStorage.service';
+import { NotificationService } from '@app/services/notification.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.less']
+  styleUrls: ['./login.component.less'],
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  loading = false;
-  submitted = false;
+
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService,
-
-  ) {
-
-
-  }
+    private restAuthenticationService: RestAuthenticationService,
+    private notificationService: NotificationService,
+    private localStorageService: LocalStorageService,
+  ) {}
 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-      userType: ['', Validators.required]
-  });
+    this.loginForm = new FormGroup({
+      email: new FormControl('', Validators.required),
+      password: new FormControl('', Validators.required),
+    });
   }
 
-  loginUser() {
-    this.submitted = true;
-
-        // stop here if form is invalid
+  onSubmit() {
+    // stop here if form is invalid
     if (this.loginForm.invalid) {
       return;
     }
 
-    this.loading = true;
-    this.router.navigate(['/kalimotxo/home']);
-
-    this.authenticationService.login(this.loginForm.controls.username.value, this.loginForm.controls.password.value)
-
+    this.restAuthenticationService
+      .login(this.loginForm.value)
+      .pipe(first())
+      .subscribe(
+        (data: any) => {
+          if (data.result.error) {
+            this.notificationService.displayError({
+              name: data.result.error.message,
+              message: data.result.error.code,
+            });
+          } else {
+            this.localStorageService.setJson('user', data.result.user);
+            this.router.navigate(['/']);
+          }
+        },
+        (error) => {
+          this.notificationService.displayError(error);
+        },
+      );
   }
 }

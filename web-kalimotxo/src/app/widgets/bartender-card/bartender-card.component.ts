@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { User } from '@app/models/users';
 
 @Component({
   selector: 'app-bartender-card',
@@ -10,13 +11,16 @@ export class BartenderCardComponent implements OnInit {
   readonly: boolean;
 
   @Input()
-  bartender: any;
+  bartender: User;
 
   @Output()
   bartenderRating: EventEmitter<any> = new EventEmitter<any>();
 
   comment: string;
   rating: number;
+
+  @Input()
+  submitted;
 
   constructor() {}
 

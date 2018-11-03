@@ -1,19 +1,20 @@
 <clr-main-container>
   <clr-header class="header-4">
     <div class="branding">
-      <img class="nav-link logo" src="assets/images/icons/icon-72x72.png" alt="logo" />
-      <span class="title">Kalimotxo</span>
+      <a [routerLink]="['/kalimotxo/hall-of-fame']" class="nav-link">
+        <img class="nav-link logo" src="assets/images/icons/icon-72x72.png" alt="logo" />
+        <span class="title">Kalimotxo</span>
+      </a>
     </div>
     <div class="header-actions">
       <clr-dropdown>
-        <button class="nav-icon" clrDropdownTrigger>
-          <clr-icon shape="user"></clr-icon>
+        <button class="nav-text" clrDropdownTrigger>
+          {{currentUser.email}}
           <clr-icon shape="caret down"></clr-icon>
         </button>
         <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
-          <a href="..." clrDropdownItem>Login</a>
-          <a href="..." clrDropdownItem>Register</a>
-          <a href="..." clrDropdownItem>Log out</a>
+          <a routerLink="/kalimotxo/bartender/bartender-profile/8Hj9j8ciR6ao0kg9Qy5RMSYtN4x2" clrDropdownItem>Profile</a>
+          <a clrDropdownItem (click)="logout()">Log out</a>
         </clr-dropdown-menu>
       </clr-dropdown>
     </div>
@@ -27,7 +28,10 @@
         <clr-icon clrVerticalNavIcon shape="qr-code"></clr-icon>
         Scan QrCode
       </a>
-
+      <a clrVerticalNavLink routerLink="/kalimotxo/customer/heat-map">
+        <clr-icon clrVerticalNavIcon shape="map"></clr-icon>
+        Heat Map
+      </a>
     </clr-vertical-nav>
   </div>
 </clr-main-container>

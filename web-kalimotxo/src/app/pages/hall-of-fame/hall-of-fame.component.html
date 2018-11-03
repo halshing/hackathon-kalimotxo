@@ -1,3 +1,9 @@
-<p>
-  hall-of-fame works!
-</p>
+
+<clr-datagrid>
+  <clr-dg-column>Full Name</clr-dg-column>
+  <clr-dg-column>Rating</clr-dg-column>
+
+  <clr-dg-row *ngFor="let bartender of bartenders">
+    <clr-dg-cell>{{bartender.firstName + ' ' +bartender.lastName}}</clr-dg-cell>
+  </clr-dg-row>
+</clr-datagrid>

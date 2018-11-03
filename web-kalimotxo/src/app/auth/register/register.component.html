@@ -1,36 +1,22 @@
 <div class="login-wrapper">
-  <form class="login">
-      <label class="title">
-          <h3 class="welcome">Register</h3>
-          Kalimotxo
-          <h5 class="hint">Insert your data to Register</h5>
-      </label>
-      <div class="login-group">
-          <input class="username" type="text"  placeholder="firstName">
-          <input class="username" type="text"  placeholder="lastName">
-          <input class="username" type="email" placeholder="email">
-
-          <input class="password" type="password" id="login_password" placeholder="Password">
-          <!-- <div class="checkbox">
-              <input type="checkbox" id="rememberme">
-              <label for="rememberme">
-                  Remember me
-              </label>
-          </div> -->
-          <!-- <div class="error active">
-              Invalid user name or password
-          </div> -->
-          <button type="submit" class="btn btn-primary">Register</button>
-          <a href="javascript://" class="signup">Sign up for a Company ID</a>
-      </div>
+  <form class="login" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <label class="title">
+      <h3 class="welcome">Register</h3>
+      Kalimotxo
+      <h5 class="hint">Insert your data to Register</h5>
+    </label>
+    <div class="login-group">
+      <input class="username" formControlName="firstName" clrInput type="text" placeholder="FirstName">
+      <input class="username" formControlName="lastName" clrInput type="text" placeholder="LastName">
+      <input class="username" formControlName="userName" clrInput type="text" placeholder="UserName">
+      <input class="username" formControlName="email" clrInput type="email" placeholder="Email">
+      <input class="username" formControlName="phoneNumber" clrInput type="text" placeholder="PhoneNumber">
+      <input class="password" formControlName="password" type="password" id="login_password" placeholder="Password">
+      <select clrInput id="state" formControlName="userType">
+        <option *ngFor="let userType of userTypes" [value]="defaultUserType">{{userType}}</option>
+      </select>
+      <button type="submit" type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Register</button>
+    </div>
+    <a routerLink="/auth/login">Back To Login Page</a>
   </form>
 </div>
-
-<form clrForm>
-
-  <input clrInput placeholder="first name" name="input" [(ngModel)]="user.firstName" />
-  <input clrInput placeholder="last name" name="input" [(ngModel)]="user.lastName" />
-  <input clrInput placeholder="last name" name="input" [(ngModel)]="user.email" />
-  <input clrInput placeholder="last name" name="input" [(ngModel)]="user.password" />
-
-</form>
