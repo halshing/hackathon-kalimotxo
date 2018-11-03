@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-img">
+    <img alt="" src="{{bartender.profilePicture}}">
+  </div>
+  <div class="card-block">
+    <h3 class="card-title">{{bartender.name}}</h3>
+    <div style="padding-left: 20%;">
+      <app-rating [rating]='bartender.rating' [readonly]="true"></app-rating>
+    </div>
+  </div>
+</div>

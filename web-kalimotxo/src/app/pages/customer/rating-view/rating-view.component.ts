@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rating-view.component.less'],
 })
 export class RatingViewComponent implements OnInit {
+  bartender = {
+    name: 'Jon',
+    profilePicture: 'https://randomuser.me/api/portraits/men/61.jpg',
+    rating: 3,
+  };
   constructor() {}
 
   ngOnInit() {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-bartender-card',
@@ -6,13 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bartender-card.component.less'],
 })
 export class BartenderCardComponent implements OnInit {
-  val = 3;
-  user = {
-    name: 'Jon',
-    profilePicture: 'https://randomuser.me/api/portraits/men/62.jpg',
-    rating: 3,
-  };
+  @Input()
+  bartender: any;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.bartender);
+  }
 }
