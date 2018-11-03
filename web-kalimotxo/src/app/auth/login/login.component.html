@@ -1,28 +1,16 @@
 <div class="login-wrapper">
-  <form class="login">
+  <form class="login" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
       <label class="title">
           <h3 class="welcome">Welcome to</h3>
           Kalimotxo
           <h5 class="hint">Login with your credentials</h5>
       </label>
       <div class="login-group">
-          <div class="auth-source select">
-              <select id="login-auth-source-1">
-                  <option>Bussiness Owner</option>
-                  <option>Bartender</option>
-                  <option>Customer</option>
-              </select>
-          </div>
-          <input class="username" type="text" id="login_username" placeholder="Username">
-          <input class="password" type="password" id="login_password" placeholder="Password">
-          <div class="checkbox">
-              <input type="checkbox" id="rememberme">
-              <label for="rememberme">
-                  Remember me
-              </label>
-          </div>
-          <button type="submit" (click)="loginUser()" class="btn btn-primary">Login</button>
-          <a routerLink="/register" class="signup">Sign up for a Company ID</a>
+
+          <input class="username" formControlName="email" clrInput type="text" id="login_username" placeholder="Username">
+          <input class="password" formControlName="password" clrInput type="password" id="login_password" placeholder="Password">
+          <button type="submit" [disabled]="loginForm.invalid" class="btn btn-primary">Login</button>
+          <a routerLink="/auth/register" class="signup">Sign up for a Company ID</a>
       </div>
   </form>
 </div>

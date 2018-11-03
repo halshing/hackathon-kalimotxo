@@ -17,6 +17,11 @@ const routes: Routes = [
         path: 'qr-scanner',
         component: QrcodeScannerComponent,
       },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'rating-view'
+      }
     ],
   },
 ];
