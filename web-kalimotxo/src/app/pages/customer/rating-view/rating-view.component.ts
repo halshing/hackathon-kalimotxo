@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CustomerService } from '@app/services/customer.service';
 
 @Component({
   selector: 'app-rating-view',
@@ -14,10 +15,17 @@ export class RatingViewComponent implements OnInit {
     rating: 3,
   };
   bartender_ratings_list;
-
-  constructor(private route: ActivatedRoute) {
-    this.route.params.subscribe((params) => console.log(params));
+  bartenderId;
+  constructor(private route: ActivatedRoute, private customerService: CustomerService) {
+    this.route.params.subscribe((params) => (this.bartenderId = params.bartenderId));
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.customerService.getBartender(this.bartenderId);
+  }
+
+  submitBartenderRating(bartenderRating) {
+    bartenderRating.bartenderId = this.bartenderId;
+    console.log(bartenderRating);
+  }
 }

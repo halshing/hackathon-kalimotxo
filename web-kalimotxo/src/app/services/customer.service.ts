@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { RestCustomerService } from '@app/api/rest-customer.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CustomerService {
+  constructor(private restCustomer: RestCustomerService) {}
 
-  constructor() { }
+  getBartender(bartenderId) {}
+  submitRating(rating) {}
 }
