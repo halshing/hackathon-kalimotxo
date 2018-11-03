@@ -19,4 +19,20 @@ export class LayoutComponent implements OnInit {
     window.localStorage.clear();
     this.router.navigate(['auth/login']);
   }
+
+  goToProfile() {
+    switch (this.currentUser.userType) {
+      case 'customer':
+        this.router.navigate(['/kalimotxo/customer/customer-profile/', this.currentUser.userId]);
+        break;
+      case 'bartender':
+        this.router.navigate(['/kalimotxo/bartender/bartender-profile/', this.currentUser.userId]);
+        break;
+      case 'business':
+        this.router.navigate(['/kalimotxo/bartender/bartender-profile/', this.currentUser.userId]);
+        break;
+      default:
+        break;
+    }
+  }
 }

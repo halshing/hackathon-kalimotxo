@@ -13,7 +13,6 @@ import { first } from 'rxjs/operators';
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   userTypes: string[] = ['Customer', 'Bartender', 'Business'];
-  defaultUserType = 'Customer';
 
   constructor(
     private router: Router,

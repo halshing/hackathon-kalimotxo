@@ -1,9 +1,12 @@
-
-<clr-datagrid>
-  <clr-dg-column>Full Name</clr-dg-column>
-  <clr-dg-column>Rating</clr-dg-column>
-
-  <clr-dg-row *ngFor="let bartender of bartenders">
-    <clr-dg-cell>{{bartender.firstName + ' ' +bartender.lastName}}</clr-dg-cell>
-  </clr-dg-row>
-</clr-datagrid>
+<div class="col-md-6" *ngFor="let bartender of bartenders |async ">
+  <div class="card">
+    <div class="card-img">
+      <img alt="avatarUrl" src="{{bartender?.avatarUrl}}">
+    </div>
+    <div class="card-block">
+      <h3 class="card-title">{{bartender?.firstName}} {{bartender?.lastName}}</h3>
+      <clr-icon *ngFor="let item of createRange(bartender?.rating)" size="16" class="is-warning" [ngClass]="{'is-solid': item}"
+        shape="star"></clr-icon>
+    </div>
+  </div>
+</div>

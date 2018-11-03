@@ -10,4 +10,7 @@ export class RestBartenderService {
   saveRating(rating) {
     return this.http.post('saveRating', rating);
   }
+  getHallofFame() {
+    return this.http.get('getTopBartenders');
+  }
 }

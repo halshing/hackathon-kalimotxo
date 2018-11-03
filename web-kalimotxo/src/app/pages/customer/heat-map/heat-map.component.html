@@ -1,1 +1,6 @@
-<p-gmap [options]="options" [style]="{'width':'100%','height':'80vh'}"></p-gmap>
+<span *ngIf="loading" style="margin: 40% 0px 0px 40%" class="spinner">
+  Loading...
+</span>
+<div *ngIf="!loading" class="container">
+  <p-gmap [options]="options" [overlays]="overlays" [style]="{'width':'100%','height':'80vh'}" (onOverlayClick)="handleOverlayClick($event)"></p-gmap>
+</div>
