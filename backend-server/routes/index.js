@@ -6,6 +6,7 @@ const signOut = require("./api/signOut");
 const currentUser = require("./api/currentUser");
 const updateUserProfile = require("./api/updateUserProfile");
 const getUserById = require("./api/getUserById");
+const getBartenderById = require("./api/getBartenderById");
 
 // Create a new user
 router.post("/createUser", createUser);
@@ -22,7 +23,10 @@ router.get("/currentUser", currentUser);
 // Update user profile
 router.post("/updateUserProfile", updateUserProfile);
 
-// Get User by Id
-router.get("/getUserById/:userId", getUserById);
+// Get user by id
+router.get("/getUserById/:id", getUserById);
+
+// Get bartender by id
+router.get("/getBartenderById/:id", getBartenderById);
 
 module.exports = router;

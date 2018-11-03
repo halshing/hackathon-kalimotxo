@@ -17,6 +17,6 @@ module.exports = {
   signOut: () => signOut(auth),
   getCurrentUser: () => getCurrentUser(auth),
   updateUserProfile: data => updateUserProfile(db, data),
-//   getUserById: data => getUserById(db, data),
-//   getBartenderById: data => getBartenderById(db, data)
+  getUserById: data => getUserById(db, data),
+  getBartenderById: data => getBartenderById(db, data)
 };
