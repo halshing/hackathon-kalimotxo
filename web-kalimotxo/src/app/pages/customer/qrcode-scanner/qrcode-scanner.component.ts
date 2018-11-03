@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 
 @Component({
@@ -16,7 +17,7 @@ export class QrcodeScannerComponent implements OnInit {
   availableDevices: MediaDeviceInfo[];
   selectedDevice: MediaDeviceInfo;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.scanner.camerasFound.subscribe((devices: MediaDeviceInfo[]) => {
@@ -43,7 +44,7 @@ export class QrcodeScannerComponent implements OnInit {
   }
 
   handleQrCodeResult(resultString: string) {
-    console.log(resultString);
+    this.router.navigate(['/kalimotxo/customer/rating-view', resultString]);
   }
 
   onDeviceSelectChange(selectedValue: string) {

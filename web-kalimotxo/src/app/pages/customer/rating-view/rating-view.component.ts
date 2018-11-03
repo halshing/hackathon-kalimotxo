@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-rating-view',
@@ -12,7 +13,11 @@ export class RatingViewComponent implements OnInit {
     profilePicture: 'https://randomuser.me/api/portraits/men/61.jpg',
     rating: 3,
   };
-  constructor() {}
+  bartender_ratings_list;
+
+  constructor(private route: ActivatedRoute) {
+    this.route.params.subscribe((params) => console.log(params));
+  }
 
   ngOnInit() {}
 }

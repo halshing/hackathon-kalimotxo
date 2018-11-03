@@ -10,7 +10,7 @@ const routes: Routes = [
     canActivate: [CustomerGuard],
     children: [
       {
-        path: 'rating-view',
+        path: 'rating-view/:bartenderId',
         component: RatingViewComponent,
       },
       {

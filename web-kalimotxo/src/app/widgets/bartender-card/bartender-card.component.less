@@ -8,7 +8,16 @@
 
 .comment-form {
   display: inline-block;
+  width: 100%;
   button {
     margin-top: 10px;
   }
+
+  input {
+    width: 100%;
+  }
+}
+
+:host ::ng-deep clr-input-container .clr-control-container {
+  width: 100%;
 }
