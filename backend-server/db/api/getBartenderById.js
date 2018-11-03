@@ -14,10 +14,19 @@ const getBartenderById = async (db, id) => {
       .where(UserType, "==", "bartender")
       .limit(1)
       .get();
-    if (query.empty) return { message: "No bartender was found!" };
+
+    if (query.empty)
+      return { message: "No bartender was found!", success: false };
+
+    // get the ratings for the bartender
     let ratings = await getRatings(db, id);
+    if (ratings.success === false) return { error: { success: false } };
+
+    // calculate the overall rating for the bartender
     let overallRating = calcAverageRating(ratings);
+
     let user = { ...query.docs[0].data(), overallRating };
+
     return { user, ...ratings };
   } catch (error) {
     return { error };
@@ -25,7 +34,9 @@ const getBartenderById = async (db, id) => {
 };
 
 const calcAverageRating = ({ ratings }) => {
-  return ratings.reduce((acc, val) => acc + parseInt(val.rating), 0) / ratings.length;
+  return (
+    ratings.reduce((acc, val) => acc + parseInt(val.rating), 0) / ratings.length
+  );
 };
 
 module.exports = getBartenderById;
