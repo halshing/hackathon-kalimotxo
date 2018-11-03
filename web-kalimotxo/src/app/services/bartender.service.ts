@@ -10,6 +10,9 @@ export class BartenderService {
   getBartenderById(bartenderId): Observable<any> {
     return this.restBartenderService.getBartenderById(bartenderId);
   }
+  getHallofFame(): Observable<any> {
+    return this.restBartenderService.getHallofFame();
+  }
   saveRating(rating) {
     this.restBartenderService.saveRating(rating).subscribe(
       (data: any) => {
