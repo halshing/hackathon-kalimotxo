@@ -9,6 +9,7 @@ const getUserById = require("./api/getUserById");
 const getBartenderById = require("./api/getBartenderById");
 const getAllBartenders = require("./api/getAllBartenders");
 const saveRating = require("./api/saveRating");
+const getRatingsByBartenderId = require("./api/getRatingsByBartenderId");
 
 // Create a new user
 router.post("/createUser", createUser);
@@ -36,5 +37,8 @@ router.get("/getAllBartenders", getAllBartenders);
 
 // Save customer rating
 router.post("/saveRating", saveRating);
+
+// Get ratings by bartender id
+router.get("/getRatingsByBartenderId/:id", getRatingsByBartenderId);
 
 module.exports = router;
