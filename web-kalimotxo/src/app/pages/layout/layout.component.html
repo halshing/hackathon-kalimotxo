@@ -7,7 +7,12 @@
       </a>
     </div>
     <div class="header-actions">
-      <clr-dropdown>
+
+      <div *ngIf="!currentUser">
+        <a routerLink="/auth/login" class="nav-link"><span class="nav-text"> Log in</span></a>
+      </div>
+
+      <clr-dropdown *ngIf="currentUser">
         <button class="nav-text" clrDropdownTrigger>
           {{currentUser.email}}
           <clr-icon shape="caret down"></clr-icon>
@@ -23,7 +28,8 @@
     <div class="content-area">
       <router-outlet></router-outlet>
     </div>
-    <clr-vertical-nav [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom" [clr-nav-level]="1">
+    <clr-vertical-nav *ngIf="currentUser" [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom"
+      [clr-nav-level]="1">
       <a *ngIf="currentUser.userType=== 'Customer'" clrVerticalNavLink routerLink="/kalimotxo/customer/qr-scanner">
         <clr-icon clrVerticalNavIcon shape="qr-code"></clr-icon>
         Scan QrCode
