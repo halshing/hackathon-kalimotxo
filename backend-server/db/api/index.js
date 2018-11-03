@@ -11,6 +11,7 @@ const updateUserProfile = require("./updateUserProfile");
 const getUserById = require("./getUserById");
 const getBartenderById = require("./getBartenderById");
 const getAllBartenders = require("./getAllBartenders");
+const saveRating = require("./saveRating");
 
 module.exports = {
   createUser: data => createUser(auth, db, data),
@@ -20,5 +21,6 @@ module.exports = {
   updateUserProfile: data => updateUserProfile(db, data),
   getUserById: data => getUserById(db, data),
   getBartenderById: data => getBartenderById(db, data),
-  getAllBartenders: data => getAllBartenders(db, data)
+  getAllBartenders: data => getAllBartenders(db, data),
+  saveRating: data => saveRating(db, data)
 };
