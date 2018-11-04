@@ -6,7 +6,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/kalimotxo/hall-of-fame', pathMatch: 'full' },
   {
     path: 'auth',
-    loadChildren: () => AuthModule,
+    loadChildren: 'app/auth/auth.module#AuthModule',
   },
 ];
 
