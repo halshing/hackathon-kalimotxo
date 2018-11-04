@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ApiModule } from '@app/api/api.module';
 import { ServicesModule } from '@app/services/services.module';
 import { WidgetsModule } from '@app/widgets/widgets.module';
 import { ChartModule } from 'primeng/chart';
@@ -9,7 +10,16 @@ import { OrganizationProfileComponent } from './organization-profile/organizatio
 import { OrganizationRoutingModule } from './organization-routing.module';
 
 @NgModule({
-  imports: [ChartModule, WidgetsModule, FormsModule, ServicesModule, CommonModule, OrganizationRoutingModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    ApiModule,
+    ChartModule,
+    WidgetsModule,
+    ServicesModule,
+    CommonModule,
+    OrganizationRoutingModule,
+  ],
   declarations: [DashboardComponent, OrganizationProfileComponent],
 })
 export class OrganizationModule {}

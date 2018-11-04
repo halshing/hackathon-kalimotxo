@@ -15,7 +15,7 @@ const routes: Routes = [
         component: DashboardComponent,
       },
       {
-        path: 'organization-profile/:orgId',
+        path: 'organization-profile/:customerId',
         component: OrganizationProfileComponent,
       },
     ],

@@ -1,3 +1,31 @@
-<p>
-  organization-profile works!
-</p>
+<span *ngIf="loading" style="margin: 40% 0px 0px 40%" class="spinner">
+  Loading...
+</span>
+<div *ngIf="!loading" class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+      <div class="card">
+        <div class="card-img">
+          <img alt="avatar" src="{{customer.avatarUrl}}">
+        </div>
+        <div class="card-block">
+          <h3 class="card-title">Business Info</h3>
+          <form class="login" [formGroup]="customerProfileForm" (ngSubmit)="onSubmit()">
+            <input formControlName="firstName" type="text" placeholder="FirstName">
+            <input formControlName="lastName" type="text" placeholder="LastName">
+            <input formControlName="userName" type="text" placeholder="UserName">
+            <input formControlName="email" type="email" placeholder="Email">
+            <input formControlName="phoneNumber" type="text" placeholder="PhoneNumber">
+            <input formControlName="userId" [hidden]="true" type="text" placeholder="UserId">
+            <input formControlName="userType" [hidden]="true" type="text" placeholder="User Type">
+            <div>
+              <button type="submit" class="btn btn-icon btn-primary btn-block">
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
