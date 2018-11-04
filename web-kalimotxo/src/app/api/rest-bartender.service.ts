@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable()
 export class RestBartenderService {
@@ -10,7 +11,10 @@ export class RestBartenderService {
   saveRating(rating) {
     return this.http.post('saveRating', rating);
   }
-  getHallofFame() {
+  getHallofFame(): Observable<any> {
     return this.http.get('getTopBartenders');
+  }
+  getAllRatings(): Observable<any> {
+    return this.http.get('getAllRatings');
   }
 }

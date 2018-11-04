@@ -40,7 +40,7 @@ export class RatingViewComponent implements OnInit {
         this.position = position;
       });
     } else {
-      this.notification.displayError({ name: 'Geolocation is not supported by this browser.' });
+      this.notification.displayError({ name: 'Geolocation is not supported by this browser.', message: '' });
     }
     this.getBartender();
   }
