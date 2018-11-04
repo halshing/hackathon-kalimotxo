@@ -25,7 +25,7 @@ export class DashboardComponent implements OnInit {
   };
   ratingChart;
   constructor(
-    private notification: NotificationService,
+    private notificationService: NotificationService,
     private bartenderService: BartenderService,
     private http: HttpClient,
   ) {}
@@ -64,18 +64,18 @@ export class DashboardComponent implements OnInit {
   }
 
   search() {
-    this.http
-      .get(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${
-          this.searchedAddress
-        }&key=AIzaSyBcLktjNns_EY7hM8iY5jHl9UA0JnHi35E
-    `,
-      )
-      .subscribe((res: any) => {
-        this.businessAddress.formatted_address = res.results[0].formatted_address;
-        this.businessAddress.location = res.results[0].geometry.location;
+    this.http.post('searchLocation', { query: this.searchedAddress }).subscribe((res: any) => {
+      if (res.error) {
+        this.notificationService.displayError({
+          name: '',
+          message: 'Empty address',
+        });
+      } else {
+        this.businessAddress.formatted_address = res.result[0].formatted_address;
+        this.businessAddress.location = res.result[0].geometry.location;
         this.displayRatings();
-      });
+      }
+    });
   }
   getInitConfigForRatingChart() {
     return {
