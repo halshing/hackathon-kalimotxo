@@ -21,8 +21,8 @@
     "coverage": "npx http-server -c-1 -o -p 9875 ./coverage",
     "lint": "./node_modules/.bin/ng lint web-kalimotxo",
     "e2e": "./node_modules/.bin/ng e2e",
-    "compodoc": "./node_modules/.bin/compodoc --theme postmark -p src/tsconfig.app.json --includes ../docs -r 4000 -s",
-    "documentation": "./node_modules/.bin/compodoc --silent --theme postmark --includes ../docs -p src/tsconfig.app.json",
+    "compodoc": "./node_modules/.bin/compodoc --theme postmark -p src/tsconfig.app.json --includes ./docs -r 4000 -s",
+    "documentation": "./node_modules/.bin/compodoc --silent --theme postmark --includes ./docs -p src/tsconfig.app.json",
     "version": "npx conventional-changelog-cli -p angular -i CHANGELOG.md -s"
   },
   "private": true,
