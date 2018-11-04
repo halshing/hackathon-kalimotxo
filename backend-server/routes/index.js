@@ -13,6 +13,7 @@ const getRatingsByBartenderId = require("./api/getRatingsByBartenderId");
 const getRatingsByCustomerId = require("./api/getRatingsByCustomerId");
 const getTopBartenders = require("./api/getTopBartenders");
 const getAllRatings = require("./api/getAllRatings");
+const searchLocation = require("./api/searchLocation");
 
 // Create a new user
 router.post("/createUser", createUser);
@@ -52,5 +53,8 @@ router.get("/getTopBartenders", getTopBartenders);
 
 // Get all ratings
 router.get("/getAllRatings", getAllRatings);
+
+// Search location for geo coordinates
+router.post("/searchLocation", searchLocation);
 
 module.exports = router;

@@ -2,7 +2,7 @@ const getAllRatings = async (db, data) => {
   try {
     let ref = db.collection("ratings");
     let query = await ref
-      .limit(50)
+      .limit(100)
       .orderBy("createdDate", "desc")
       .get();
     if (query.empty) return { message: "No ratings found", success: false };
