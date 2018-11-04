@@ -13,6 +13,7 @@ const getBartenderById = require("./getBartenderById");
 const getAllBartenders = require("./getAllBartenders");
 const saveRating = require("./saveRating");
 const getRatingsByBartenderId = require("./getRatingsByBartenderId");
+const getRatingsByCustomerId = require("./getRatingsByCustomerId");
 const getTopBartenders = require("./getTopBartenders");
 const getAllRatings = require("./getAllRatings");
 
@@ -27,6 +28,7 @@ module.exports = {
   getAllBartenders: data => getAllBartenders(db, data),
   saveRating: data => saveRating(db, data),
   getRatingsByBartenderId: data => getRatingsByBartenderId(db, data),
+  getRatingsByCustomerId: data => getRatingsByCustomerId(db, data),
   getTopBartenders: data => getTopBartenders(db, data),
   getAllRatings: data => getAllRatings(db, data)
 };

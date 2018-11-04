@@ -10,6 +10,7 @@ const getBartenderById = require("./api/getBartenderById");
 const getAllBartenders = require("./api/getAllBartenders");
 const saveRating = require("./api/saveRating");
 const getRatingsByBartenderId = require("./api/getRatingsByBartenderId");
+const getRatingsByCustomerId = require("./api/getRatingsByCustomerId");
 const getTopBartenders = require("./api/getTopBartenders");
 const getAllRatings = require("./api/getAllRatings");
 
@@ -42,6 +43,9 @@ router.post("/saveRating", saveRating);
 
 // Get ratings by bartender id
 router.get("/getRatingsByBartenderId/:id", getRatingsByBartenderId);
+
+// Get ratings by customer id
+router.get("/getRatingsByCustomerId", getRatingsByCustomerId);
 
 // Get top bartenders
 router.get("/getTopBartenders", getTopBartenders);
