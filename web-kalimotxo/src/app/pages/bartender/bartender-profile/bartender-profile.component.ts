@@ -56,6 +56,7 @@ export class BartenderProfileComponent implements OnInit {
             });
           } else if (data.result.message) {
             this.notificationService.displayError({
+              name: '',
               message: data.result.message,
             });
           } else {

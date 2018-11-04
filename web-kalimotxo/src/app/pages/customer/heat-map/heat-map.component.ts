@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BartenderService } from '@app/services/bartender.service';
 import { NotificationService } from '@app/services/notification.service';
 import * as _ from 'lodash';
-
+declare var google;
 @Component({
   selector: 'app-heat-map',
   templateUrl: './heat-map.component.html',
