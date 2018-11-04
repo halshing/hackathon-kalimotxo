@@ -12,9 +12,9 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: 'hall-of-fame', component: HallOfFameComponent },
-      { path: 'customer', loadChildren: () => CustomerModule },
-      { path: 'bartender', loadChildren: () => BartenderModule },
-      { path: 'organization', loadChildren: () => OrganizationModule },
+      { path: 'customer', loadChildren: './customer/customer.module#CustomerModule' },
+      { path: 'bartender', loadChildren: './bartender/bartender.module#BartenderModule' },
+      { path: 'organization', loadChildren: './organization/organization.module#OrganizationModule' },
     ],
   },
 ];
