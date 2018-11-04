@@ -7,7 +7,7 @@
   "display": "fullscreen",
   "orientation": "portrait",
   "related_applications": [],
-  "prefer_related_applications": false,
+  "prefer_related_applications": true,
   "Scope": "/",
   "start_url": "/",
   "icons": [{
