@@ -1,13 +1,10 @@
-
 # Kalimotxo - Bartender Rating App
 
 # Upstack Hackathon 2018 Team 7 October 27, 2018
 
-Introduction
-============
+# Introduction
 
-Purpose
--------
+## Purpose
 
 The purpose of this document is to build an online system for bartender
 rating app. This app aims make the relationship between customers and
@@ -16,8 +13,7 @@ bartenders more personal. The name of the app will be
 and is pronounced in spanish
 [Calimocho](#https://forvo.com/word/kalimotxo/).
 
-Intended Audience
------------------
+## Intended Audience
 
 This document is intended for business owners, investors, developers,
 and designers so they can have a better understanding as to the goal of
@@ -29,8 +25,7 @@ document are not technical and are intended to provide an overview, in
 common terms, of what the application is and the features it will
 implement.
 
-Project Scope
--------------
+## Project Scope
 
 The application is designed to enhance the relationship between
 customers and servers by providing a platform for feedback based on
@@ -44,169 +39,148 @@ sentiment on an individual level which allows for better performance and
 increased revenue for business owners, and, in turn, higher engagement
 within the application.
 
-Overall Description
-===================
+# Overall Description
 
-Operating Environment
----------------------
+## Operating Environment
 
 The application will be available in all major browsers.
 
-Design and Implementation Constraints
--------------------------------------
+## Design and Implementation Constraints
 
 ### Technology Stack
 
 Backend:
 
--   Node.js
+- Node.js
 
--   Express.js
+- Express.js
 
--   Firebase
+- Firebase
 
 Frontend:
 
--   Angular 2+
+- Angular 2+
 
--   Angular Material
+- Angular Material
 
-### Application Flow
-
-![image](uml/process-flow-diagram){width="\textwidth"}
-
-System Features
-===============
+# System Features
 
 The system must provide,at a minimum, the following functions in
 accordance with the other requirements described within this SRS
 document.
 
-Register System
----------------
+## Register System
 
 The system should have a register system for the user.
 
-Authorization and Authentication System
----------------------------------------
+## Authorization and Authentication System
 
 The system should have a login system for the user and based on their
 roles they will access different views in the app.
 
--   As a customer i will have the capability to leave comments and
-    readings.
+- As a customer i will have the capability to leave comments and
+  readings.
 
--   As a bartender i will have access to my profile.
+- As a bartender i will have access to my profile.
 
--   As a business unit i will have access to my dashboard.
+- As a business unit i will have access to my dashboard.
 
-QR Code Generator
------------------
+## QR Code Generator
 
 As a bartender after you are registered in the app you will receive a
 unique qrcode. The bartender can print the qrcode or present from the
 phone the qrcode to the customer.
 
-QR Code Scanner
----------------
+## QR Code Scanner
 
 As a user i need to be able to scan the qrcode provided by the
 bartender.
 
-User Profile
-------------
+## User Profile
 
--   As a user, i need a profile view where I'm able to change my profile
-    picture add a description.
+- As a user, i need a profile view where I'm able to change my profile
+  picture add a description.
 
--   As a bartender i need a view of all my reviews received form
-    customers.
+- As a bartender i need a view of all my reviews received form
+  customers.
 
--   As a business unit i need a profile view where I'm able to change my
-    addresses
+- As a business unit i need a profile view where I'm able to change my
+  addresses
 
-Customer rating
----------------
+## Customer rating
 
 As a user after I scanned the qr code from the bartender:
 
--   I need a view with the bartender profile and rating.
+- I need a view with the bartender profile and rating.
 
--   I need the capability to add a comment and rating for a bartender
+- I need the capability to add a comment and rating for a bartender
 
-Hall of Fame
-------------
+## Hall of Fame
 
 As a non login in user i have access to the bartenders Hall of Fame.
 
-Heat Map
---------
+## Heat Map
 
 As a login in customer i have access to a heat map where i can see the
 most crowded near me.
 
-Business Unit Premium Dashboard
--------------------------------
+## Business Unit Premium Dashboard
 
 As a business owner i have a dashboard to see premium features such as
 employee performance, frequent customers, and available rewards
 
-Functional Requirements
------------------------
+## Functional Requirements
 
 The application should be mobile friendly.
 
-System Data
------------
+## System Data
 
 1.  Customers
 
-    -   User ID
+    - User ID
 
-    -   First name
+    - First name
 
-    -   Last name
+    - Last name
 
-    -   Email
+    - Email
 
-    -   Score
+    - Score
 
-    -   Location
+    - Location
 
 2.  Servers
 
-    -   User ID
+    - User ID
 
-    -   First name
+    - First name
 
-    -   Last name
+    - Last name
 
-    -   Email
+    - Email
 
-    -   Overall Rating
+    - Overall Rating
 
-    -   Service Code
+    - Service Code
 
-    -   Location
+    - Location
 
 3.  Ratings
 
-    -   Server ID
+    - Server ID
 
-    -   Restaurant ID
+    - Restaurant ID
 
-    -   Comment
+    - Comment
 
-    -   Rating
+    - Rating
 
 4.  Restaurants
 
-    -   Name
+    - Name
 
-    -   Owner
+    - Owner
 
-    -   Restaurant ID
+    - Restaurant ID
 
-    -   Rewards
-
-
+    - Rewards
