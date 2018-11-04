@@ -13,7 +13,7 @@
       <input class="username" formControlName="phoneNumber" clrInput type="text" placeholder="PhoneNumber">
       <input class="password" formControlName="password" type="password" id="login_password" placeholder="Password">
       <select clrInput id="state" formControlName="userType">
-        <option *ngFor="let userType of userTypes" [value]="defaultUserType">{{userType}}</option>
+        <option *ngFor="let userType of userTypes" [value]="userType">{{userType}}</option>
       </select>
       <button type="submit" type="submit" [disabled]="registerForm.invalid" class="btn btn-primary">Register</button>
     </div>

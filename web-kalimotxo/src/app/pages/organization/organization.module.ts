@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { OrganizationRoutingModule } from './organization-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { OrganizationRoutingModule } from './organization-routing.module';
 
 @NgModule({
   imports: [

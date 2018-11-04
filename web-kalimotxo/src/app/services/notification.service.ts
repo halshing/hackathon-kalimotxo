@@ -5,7 +5,14 @@ import { MessageService } from 'primeng/components/common/messageservice';
 export class NotificationService {
   constructor(private messageService: MessageService) {}
 
-  displayError(err) {
+  /**
+   *
+   *
+   * @param {Error} err
+   * @param {name:string,message:string} err
+   * @memberof NotificationService
+   */
+  displayError(err: Error) {
     this.messageService.add({
       severity: 'error',
       summary: err.name,
@@ -13,10 +20,21 @@ export class NotificationService {
     });
   }
 
+  /**
+   *
+   *
+   * @param {String} msg
+   * @memberof NotificationService
+   */
   displaySuccess(msg) {
     this.messageService.add({
       severity: 'success',
       summary: msg,
     });
   }
+}
+
+interface Error {
+  name;
+  message;
 }

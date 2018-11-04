@@ -10,4 +10,5 @@ export interface Bartender {
   email: string;
   userId: string;
   userName: string;
+  avatarUrl: string;
 }
