@@ -1,4 +1,6 @@
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { NgModule } from '@angular/core';
 import { ServicesModule } from '@app/services/services.module';
 import { WidgetsModule } from '@app/widgets/widgets.module';
@@ -11,7 +13,8 @@ import { QrcodeScannerComponent } from './qrcode-scanner/qrcode-scanner.componen
 import { RatingViewComponent } from './rating-view/rating-view.component';
 
 @NgModule({
-  imports: [CommonModule, CustomerRoutingModule, ZXingScannerModule, WidgetsModule, ServicesModule, GMapModule],
+  imports: [CommonModule, CustomerRoutingModule, ZXingScannerModule, WidgetsModule, ServicesModule, GMapModule,
+    FormsModule, ReactiveFormsModule],
   declarations: [QrcodeScannerComponent, RatingViewComponent, HeatMapComponent, CustomerProfileComponent],
 })
 export class CustomerModule {}

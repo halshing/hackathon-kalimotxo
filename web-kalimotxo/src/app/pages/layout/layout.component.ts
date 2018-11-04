@@ -29,7 +29,7 @@ export class LayoutComponent implements OnInit {
         this.router.navigate(['/kalimotxo/bartender/bartender-profile/', this.currentUser.userId]);
         break;
       case 'business':
-        this.router.navigate(['/kalimotxo/bartender/bartender-profile/', this.currentUser.userId]);
+        this.router.navigate(['/kalimotxo/organization/organization-profile/', this.currentUser.userId]);
         break;
       default:
         break;

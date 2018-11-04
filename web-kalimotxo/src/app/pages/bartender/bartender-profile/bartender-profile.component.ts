@@ -71,6 +71,20 @@ export class BartenderProfileComponent implements OnInit {
         },
       );
   }
+
+  createRange(number) {
+    const items = [];
+    for (let i = 1; i <= 5; i++) {
+      if (number > 0) {
+        items.push(true);
+      } else {
+        items.push(false);
+      }
+      number--;
+    }
+    return items;
+  }
+
   onSubmit() {
     this.restUserService
       .update(this.bartenderProfileForm.value)

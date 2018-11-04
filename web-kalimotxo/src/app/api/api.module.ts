@@ -17,6 +17,7 @@ import { RestUserService } from './rest-user.service';
     RestBartenderService,
     RestCustomerService,
     RestOrganizationService,
+    RestCustomerService
   ],
 })
 export class ApiModule {}

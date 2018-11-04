@@ -7,6 +7,10 @@
       <div class="card">
         <div class="card-img">
           <img alt="avatar" src="{{bartender.avatarUrl}}">
+          <div style="text-align: center;padding-top:10px ">
+            <clr-icon *ngFor="let item of createRange(bartender.overallRating)" size="32" class="is-warning" [ngClass]="{'is-solid': item}"
+              shape="star"></clr-icon>
+          </div>
           <div class="qr-code" align="center">
             <qrcode [qrdata]="bartender.userId" [size]="200" [level]="'Q'"></qrcode>
           </div>
