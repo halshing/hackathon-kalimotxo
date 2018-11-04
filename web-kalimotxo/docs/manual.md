@@ -63,7 +63,7 @@ NOTE: This view is only available for Business users. It lists all ratings made 
 1. Log in using a Business account
 2. Tap the menu icon the top left of screen
 3. Click on "Dashboard"
-4. Search for a location.
+4. Search for a location. i.e. "aurel vlaicu 110".
 
 ![Dashboard](./images/dashboard.png "Dashboard")
 
