@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BartenderService } from '@app/services/bartender.service';
 import { NotificationService } from '@app/services/notification.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-heat-map',
@@ -17,7 +19,7 @@ export class HeatMapComponent implements OnInit {
 
   overlays: any[] = [];
 
-  constructor(private notification: NotificationService) {}
+  constructor(private notification: NotificationService, private bartenderService: BartenderService) {}
 
   ngOnInit() {
     if (navigator.geolocation) {
@@ -29,11 +31,28 @@ export class HeatMapComponent implements OnInit {
         this.loading = false;
       });
     } else {
-      this.notification.displayError({ name: 'Geolocation is not supported by this browser.' });
+      this.notification.displayError({ name: 'Geolocation is not supported by this browser.', message: '' });
     }
 
+    this.bartenderService.getAllRatings().subscribe((res) => {
+      if (!_.isNull(res.result.ratings)) {
+        const ratings = res.result.ratings;
+        ratings.forEach((rating) => {
+          if (!_.isNull(rating.position) && !_.isUndefined(rating.position) && rating.position !== '[object Object]') {
+            this.overlays.push(
+              new google.maps.Marker({
+                position: { lat: Number(rating.position.latitude), lng: Number(rating.position.longitude) },
+                title: rating.comment,
+                animation: google.maps.Animation.DROP,
+              }),
+            );
+          }
+        });
+      }
+    });
     this.infoWindow = new google.maps.InfoWindow();
   }
+
   initOverlays() {
     const image = {
       url: 'https://img.icons8.com/dusk/50/000000/marker.png',
@@ -60,6 +79,7 @@ export class HeatMapComponent implements OnInit {
       );
     }
   }
+
   handleOverlayClick(event) {
     const isMarker = event.overlay.getTitle !== undefined;
     if (isMarker) {

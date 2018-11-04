@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Bartender } from '@app/models/bartender';
 import { BartenderService } from '@app/services/bartender.service';
+import { NotificationService } from '@app/services/notification.service';
+import * as _ from 'lodash';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hall-of-fame',
@@ -11,10 +14,18 @@ import { Observable } from 'rxjs';
 export class HallOfFameComponent implements OnInit {
   bartenders: Observable<Bartender[]>;
 
-  constructor(private bartenderService: BartenderService) {}
+  constructor(private bartenderService: BartenderService, private notificationService: NotificationService) {}
 
   ngOnInit() {
-    this.bartenders = this.bartenderService.getHallofFame();
+    this.bartenders = this.bartenderService.getHallofFame().pipe(
+      map((res: any) => {
+        if (!_.isNull(res.result.users)) {
+          return res.result.users;
+        } else {
+          this.notificationService.displayError({ name: '', message: 'no hall of fame available' });
+        }
+      }),
+    );
   }
 
   createRange(number) {

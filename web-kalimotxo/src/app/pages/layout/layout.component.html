@@ -30,11 +30,11 @@
     </div>
     <clr-vertical-nav *ngIf="currentUser" [clrVerticalNavCollapsible]="true" class="nav-trigger--bottom"
       [clr-nav-level]="1">
-      <a *ngIf="currentUser.userType=== 'Customer'" clrVerticalNavLink routerLink="/kalimotxo/customer/qr-scanner">
+      <a *ngIf="currentUser.userType=== 'customer'" clrVerticalNavLink routerLink="/kalimotxo/customer/qr-scanner">
         <clr-icon clrVerticalNavIcon shape="qr-code"></clr-icon>
         Scan QrCode
       </a>
-      <a *ngIf="currentUser.userType=== 'Customer'" clrVerticalNavLink routerLink="/kalimotxo/customer/heat-map">
+      <a *ngIf="currentUser.userType=== 'customer'" clrVerticalNavLink routerLink="/kalimotxo/customer/heat-map">
         <clr-icon clrVerticalNavIcon shape="map"></clr-icon>
         Heat Map
       </a>
