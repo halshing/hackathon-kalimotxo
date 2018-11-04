@@ -11,7 +11,7 @@ export class BartenderCardComponent implements OnInit {
   readonly: boolean;
 
   @Input()
-  bartender: User;
+  bartender: any;
 
   @Output()
   bartenderRating: EventEmitter<any> = new EventEmitter<any>();
