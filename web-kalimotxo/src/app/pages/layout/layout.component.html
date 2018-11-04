@@ -34,6 +34,10 @@
         <clr-icon clrVerticalNavIcon shape="qr-code"></clr-icon>
         Scan QrCode
       </a>
+      <a *ngIf="currentUser.userType=== 'business'" clrVerticalNavLink routerLink="/kalimotxo/organization/dashboard">
+        <clr-icon clrVerticalNavIcon shape="dashboard"></clr-icon>
+        Dashboard
+      </a>
       <a clrVerticalNavLink routerLink="/kalimotxo/customer/heat-map">
         <clr-icon clrVerticalNavIcon shape="map"></clr-icon>
         Heat Map
