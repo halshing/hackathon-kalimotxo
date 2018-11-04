@@ -1,4 +1,7 @@
 [{
   "title": "User Manual",
   "file": "manual.md"
+}, {
+  "title": "Software requirements specification",
+  "file": "srs.md"
 }]
