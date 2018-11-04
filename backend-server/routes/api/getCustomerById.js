@@ -1,13 +1,13 @@
 const api = require("../../db/api");
 
 // GET request
-const getUserById = async (req, res) => {
+const getCustomerById = async (req, res) => {
   try {
-    let result = await api.getUserById(req.params.id);
+    let result = await api.getCustomerById(req.params.id);
     res.json({ result });
   } catch (error) {
     res.json({ error });
   }
 };
 
-module.exports = getUserById;
+module.exports = getCustomerById;
