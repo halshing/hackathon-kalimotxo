@@ -1,6 +1,7 @@
 const getRatingsByCustomerId = async (db, id) => {
     try {
         let ref = db.collection("ratings");
+        
         let query = await ref
             .where("customerId", "==", id)
             .orderBy("createdDate", "desc")
