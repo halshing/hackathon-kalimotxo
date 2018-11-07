@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   businessAddress: BusinessAddress = {
     formatted_address: '',
     location: '',
+    bounds: ''
   };
   ratingChart;
   constructor(
@@ -47,8 +48,10 @@ export class DashboardComponent implements OnInit {
   displayRatings() {
     this.ratingsFiltered = this.ratingsList.filter((rating) => {
       return (
-        Number(rating.position.latitude).toFixed(3) === this.businessAddress.location.lat.toFixed(3) &&
-        Number(rating.position.longitude).toFixed(3) === this.businessAddress.location.lng.toFixed(3)
+        (rating.position.latitude < this.businessAddress.bounds.northeast.lat && rating.position.longitude < this.businessAddress.bounds.northeast.lng) &&
+        (rating.position.latitude > this.businessAddress.bounds.southwest.lat && rating.position.longitude > this.businessAddress.bounds.southwest.lng)
+        // Number(rating.position.latitude).toFixed(3) === this.businessAddress.location.lat.toFixed(3) &&
+        // Number(rating.position.longitude).toFixed(3) === this.businessAddress.location.lng.toFixed(3)
       );
     });
     this.populateChart();
@@ -73,6 +76,7 @@ export class DashboardComponent implements OnInit {
       } else {
         this.businessAddress.formatted_address = res.result[0].formatted_address;
         this.businessAddress.location = res.result[0].geometry.location;
+        this.businessAddress.bounds = res.result[0].geometry.bounds;
         this.displayRatings();
       }
     });
@@ -94,4 +98,5 @@ export class DashboardComponent implements OnInit {
 interface BusinessAddress {
   formatted_address;
   location;
+  bounds;
 }
